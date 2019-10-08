@@ -6,7 +6,7 @@ AUTHOR = 'Nick and Nathan'
 SITETITLE = 'Automate The Needful'
 SITENAME = 'Automate The Needful'
 SITEURL = ''
-THEME = "themes/Flex"
+THEME = "themes/chunk"
 
 PATH = 'content'
 STATIC_PATHS = ['extra/CNAME']

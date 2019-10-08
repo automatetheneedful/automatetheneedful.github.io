@@ -3,9 +3,10 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Nick and Nathan'
+SITETITLE = 'Automate The Needful'
 SITENAME = 'Automate The Needful'
 SITEURL = ''
-THEME = "/home/nick/projects/automatetheneedful.github.io/pelican-themes/html5-dopetrope"
+THEME = "themes/Flex"
 
 PATH = 'content'
 STATIC_PATHS = ['extra/CNAME']
@@ -21,15 +22,16 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+MAIN_MENU = True
+MENUITEMS = (('Archives', '/archives.html'),
+             ('Categories', '/categories.html'),
+             ('Tags', '/tags.html'),)
+
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = ()
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = ()
 
 DEFAULT_PAGINATION = 10
 

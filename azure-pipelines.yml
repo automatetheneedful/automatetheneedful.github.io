@@ -1,0 +1,15 @@
+trigger:
+- src
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    make publish
+    git config --local user.name "Azure Pipelines"
+    git config --local user.email "azuredevops@microsoft.com"
+    git add output/
+    git commit -m 'Publishing output content to Master'
+    git push -u origin Master
+  displayName: 'Make HTML from Pelican source and push to master'

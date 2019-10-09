@@ -5,6 +5,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- script: pip3 install pelican
+  displayName: 'Install Pelican'
+
 - script: |
     make publish
     git config --local user.name "Azure Pipelines"

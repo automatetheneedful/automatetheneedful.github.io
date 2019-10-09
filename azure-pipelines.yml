@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: pip3 install pelican
+- script: pip3 install setuptools pelican
   displayName: 'Install Pelican'
 
 - script: |

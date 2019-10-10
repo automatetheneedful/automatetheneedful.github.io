@@ -5,6 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- script: pip3 install setuptools wheel
 - script: pip3 install -r requirements.txt
   displayName: 'Install requirements.txt'
 

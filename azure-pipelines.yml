@@ -5,24 +5,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: sudo apt install python3-venv
-
-# - script: pip3 install setuptools wheel
-#   displayName: 'Install python prereqs'
-
-- script: |
-    mkdir venv
-    python3 -m venv venv
-    source venv/bin/activate
-    pip3 install setuptools wheel
-    pip3 install -r requirements.txt
-  displayName: 'Make Virtual Environment and install requirements'
+- script: pip3 install setuptools wheel
+- script: pip3 install -r requirements.txt
+  displayName: 'Install requirements'
 
 - script: |
-    make publish
+    venv/bin/pelican content -o output -s publishconf.py 
+    # make publish
     git config --local user.name "Azure Pipelines"
     git config --local user.email "azuredevops@microsoft.com"
-    git add output/
+    git add output
     git commit -m 'Publishing output content to Master'
     git push -u origin master
   displayName: 'Make HTML from Pelican source and push to master'

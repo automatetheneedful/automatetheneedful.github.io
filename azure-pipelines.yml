@@ -7,13 +7,14 @@ pool:
 steps:
 - script: sudo apt install python3-venv
 
-- script: pip3 install setuptools wheel
-  displayName: 'Install python prereqs'
+# - script: pip3 install setuptools wheel
+#   displayName: 'Install python prereqs'
 
 - script: |
     mkdir venv
     python3 -m venv venv
     source venv/bin/activate
+    pip3 install setuptools wheel
     pip3 install -r requirements.txt
   displayName: 'Make Virtual Environment and install requirements'
 

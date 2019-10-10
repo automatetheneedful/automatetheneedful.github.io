@@ -10,6 +10,8 @@ steps:
   displayName: 'Install requirements'
 
 - script: |
+    pwd
+    ls -la
     venv/bin/pelican content -o output -s publishconf.py 
     # make publish
     git config --local user.name "Azure Pipelines"

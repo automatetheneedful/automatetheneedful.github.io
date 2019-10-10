@@ -9,13 +9,9 @@ steps:
     sudo apt install python3-venv
     python3 -m venv venv
     source venv/bin/activate
-- script: pip3 install setuptools wheel
-- script: pip3 install -r requirements.txt
-  displayName: 'Install requirements'
-
-- script: |
+    pip3 install setuptools wheel
+    pip3 install -r requirements.txt
     venv/bin/pelican content -o output -s publishconf.py 
-    # make publish
     git config --local user.name "Azure Pipelines"
     git config --local user.email "azuredevops@microsoft.com"
     git add output

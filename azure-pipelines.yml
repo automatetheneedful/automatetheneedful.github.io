@@ -6,8 +6,14 @@ pool:
 
 steps:
 - script: pip3 install setuptools wheel
-- script: pip3 install -r requirements.txt
-  displayName: 'Install requirements.txt'
+  displayName: 'Install python prereqs'
+
+- script: |
+    mkdir venv
+    python3 -m venv venv
+    source venv/bin/activate
+    pip3 install -r requirements.txt
+  displayName: 'Make Virtual Environment and install requirements'
 
 - script: |
     make publish

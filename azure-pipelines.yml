@@ -5,6 +5,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- script: sudo apt install python3-venv
+
 - script: pip3 install setuptools wheel
   displayName: 'Install python prereqs'
 

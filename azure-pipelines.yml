@@ -16,6 +16,6 @@ steps:
     git config --local user.email "azuredevops@microsoft.com"
     git add -f output
     git commit -m 'Publishing output content to Master'
-    git push -u origin master
+    git push origin src:master
   displayName: 'Make HTML from Pelican source and push to master'
 

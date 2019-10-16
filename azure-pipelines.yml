@@ -12,10 +12,7 @@ steps:
     pip3 install setuptools wheel
     pip3 install -r requirements.txt
     venv/bin/pelican ./content -o ./output -s ./publishconf.py 
-    git config --local user.name "Azure Pipelines"
-    git config --local user.email "azuredevops@microsoft.com"
-    git add -f output
-    git commit -m 'Publishing output content to Master'
-    git push origin src:master
-  displayName: 'Make HTML from Pelican source and push to master'
+  displayName: 'Make HTML from Pelican source'
 
+- publish: $(System.DefaultWorkingDirectory)/output
+  artifact: ATN_HTML_OUTPUT

@@ -5,6 +5,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.7'
+    architecture: 'x64'
+
 - script: |
     sudo apt install python3-venv
     python3 -m venv venv
@@ -16,3 +21,4 @@ steps:
 
 - publish: $(System.DefaultWorkingDirectory)/output
   artifact: ATN_HTML_OUTPUT
+
